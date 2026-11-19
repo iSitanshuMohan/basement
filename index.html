@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spacious Basement Rental | Available Now</title>
+  <meta name="description" content="Clean, modern, and private basement apartment available for rent." />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-indigo-600 selection:text-white">
+
+  <!-- =====================================================================
+       PROPERTY CONFIGURATION & MEDIA (Easily edit your details below)
+       ===================================================================== -->
+  <script src="./property-config.js"></script>
+
+  <!-- =====================================================================
+       HEADER / NAVBAR
+       ===================================================================== -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold">
+          B
+        </div>
+        <span class="font-bold text-slate-900 text-lg">Basement Suite Rental</span>
+      </div>
+
+      <nav class="hidden sm:flex items-center gap-6 text-sm font-medium text-slate-600">
+        <a href="#gallery" class="hover:text-indigo-600 transition">Photos & Video</a>
+        <a href="#details" class="hover:text-indigo-600 transition">Amenities</a>
+        <a href="#location" class="hover:text-indigo-600 transition">Location</a>
+        <a href="#contact" class="hover:text-indigo-600 transition">Contact</a>
+      </nav>
+
+      <a
+        href="#contact"
+        class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium shadow-sm transition"
+      >
+        Book Viewing
+      </a>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       HERO SECTION
+       ===================================================================== -->
+  <section class="py-12 sm:py-20 px-4">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <!-- Left Content -->
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold uppercase tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span id="hero-availability">Available Immediately</span>
+        </div>
+
+        <h1 id="hero-title" class="text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight leading-tight">
+          Modern & Private Basement Suite
+        </h1>
+
+        <p id="hero-tagline" class="text-lg text-slate-600 leading-relaxed">
+          Spacious, fully finished 1-bedroom basement apartment with private entrance, natural light, and all utilities included.
+        </p>
+
+        <!-- Rent & Terms Card -->
+        <div class="flex flex-wrap items-center gap-4 p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
+          <div>
+            <p class="text-xs text-slate-400 uppercase font-semibold">Monthly Rent</p>
+            <p id="hero-rent" class="text-2xl font-bold text-indigo-600">Rs. 1 - 1.5 lakh / month</p>
+          </div>
+          <div class="w-px h-10 bg-slate-200 hidden sm:block"></div>
+          <div>
+            <p class="text-xs text-slate-400 uppercase font-semibold">Security Deposit</p>
+            <p id="hero-deposit" class="text-lg font-semibold text-slate-700">Rs. 1 - 1.5 lakh</p>
+          </div>
+          <div class="w-px h-10 bg-slate-200 hidden sm:block"></div>
+          <div>
+            <p class="text-xs text-slate-400 uppercase font-semibold">Utilities</p>
+            <p class="text-lg font-semibold text-slate-700">All Included</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3 pt-2">
+          <a
+            href="#contact"
+            class="px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-center shadow transition"
+          >
+            Contact Landlord
+          </a>
+          <a
+            href="#gallery"
+            class="px-6 py-3.5 rounded-xl bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-medium text-center transition"
+          >
+            View Gallery
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Hero Image -->
+      <div class="lg:col-span-5">
+        <button
+          id="hero-media-button"
+          type="button"
+          aria-label="Open property image in full screen"
+          class="block w-full rounded-3xl overflow-hidden shadow-xl border border-slate-200 bg-slate-200 aspect-[4/3] cursor-pointer"
+        >
+          <img
+            id="hero-main-img"
+            src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1000&q=80"
+            alt="Basement Living Room"
+            class="w-full h-full object-cover"
+          />
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       PHOTO & VIDEO GALLERY SECTION
+       ===================================================================== -->
+  <section id="gallery" class="py-16 px-4 bg-white border-y border-slate-200">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-semibold uppercase tracking-widest text-indigo-600">Visual Tour</span>
+        <h2 class="text-3xl font-bold text-slate-900 mt-2">Photos & Video Walkthrough</h2>
+        <p class="text-slate-600 mt-2 text-sm sm:text-base">Take a look inside the clean, cozy, and well-maintained basement unit.</p>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Injected dynamically from PROPERTY_CONFIG.mediaGallery -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Full-screen Media Viewer -->
+  <div
+    id="media-modal"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/95 p-4 sm:p-8"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Full-screen media viewer"
+  >
+    <button
+      id="media-modal-close"
+      type="button"
+      aria-label="Close full-screen viewer"
+      class="absolute right-4 top-4 z-30 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-3xl font-light leading-none text-white hover:bg-white/20 transition"
+    >
+      &times;
+    </button>
+
+    <button
+      id="media-modal-prev"
+      type="button"
+      aria-label="Previous image or video"
+      class="absolute left-3 top-1/2 z-30 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-black/60 text-3xl text-white hover:bg-black/80 transition sm:left-6"
+    >
+      &#8249;
+    </button>
+
+    <button
+      id="media-modal-next"
+      type="button"
+      aria-label="Next image or video"
+      class="absolute right-3 top-1/2 z-30 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-black/60 text-3xl text-white hover:bg-black/80 transition sm:right-6"
+    >
+      &#8250;
+    </button>
+
+    <div id="media-modal-content" class="flex h-full w-full flex-col items-center justify-center">
+      <img id="media-modal-image" alt="" class="hidden max-h-full max-w-full rounded-lg object-contain" />
+      <video
+        id="media-modal-video"
+        controls
+        playsinline
+        preload="metadata"
+        class="hidden max-h-full max-w-full rounded-lg bg-black"
+      ></video>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       PROPERTY DESCRIPTION & AMENITIES CHECKLIST
+       ===================================================================== -->
+  <section id="details" class="py-16 px-4">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <!-- Description -->
+      <div class="lg:col-span-6 space-y-4">
+        <span class="text-xs font-semibold uppercase tracking-widest text-indigo-600">About the Property</span>
+        <h2 id="property-description-heading" class="text-3xl font-bold text-slate-900"></h2>
+        <div id="property-description" class="space-y-4"></div>
+      </div>
+
+      <!-- Amenities Checklist Card -->
+      <div class="lg:col-span-6 bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
+        <h3 class="text-xl font-bold text-slate-900 mb-6">What’s Included & Amenities</h3>
+        <ul id="amenities-list" class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-700">
+          <!-- Injected dynamically from PROPERTY_CONFIG.amenities -->
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       GOOGLE MAPS LOCATION SECTION
+       ===================================================================== -->
+  <section id="location" class="py-16 px-4 bg-slate-900 text-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-5 space-y-4">
+          <span class="text-xs font-semibold uppercase tracking-widest text-indigo-400">Neighborhood</span>
+          <h2 class="text-3xl font-bold">Location & Map</h2>
+          <p id="location-text" class="text-slate-300 text-sm sm:text-base leading-relaxed">
+            Downtown Suburbs, Neighborhood Corridor. Conveniently located close to public transport stops, local supermarkets, and parks.
+          </p>
+          <div class="pt-2">
+            <a
+              id="google-maps-external"
+              href="https://maps.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white text-sm font-medium transition"
+            >
+              <span>Open in Google Maps App</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="relative rounded-3xl overflow-hidden border border-white/10 shadow-xl bg-slate-800 aspect-[16/10]">
+            <iframe
+              id="map-iframe"
+              title="Property Location"
+              src=""
+              class="w-full h-full border-0"
+              loading="lazy"
+            ></iframe>
+            <a
+              id="map-click-link"
+              href="https://maps.app.goo.gl/XVkQG2PCoj9WSFfFA"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open property location in Google Maps"
+              class="absolute inset-0 z-10"
+            ></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       DIRECT CONTACT SECTION
+       ===================================================================== -->
+  <section id="contact" class="py-16 px-4 bg-white border-t border-slate-200">
+    <div class="max-w-4xl mx-auto text-center space-y-6">
+      <span class="text-xs font-semibold uppercase tracking-widest text-indigo-600">Get in Touch</span>
+      <h2 class="text-3xl font-bold text-slate-900">Interested in Renting? Contact Me Directly</h2>
+      <p class="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">
+        Reach out via phone or WhatsApp to schedule a viewing or ask any questions.
+      </p>
+
+      <!-- Contact Buttons Grid -->
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+        <a
+          id="whatsapp-btn"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm shadow transition"
+        >
+          <span>Chat on WhatsApp</span>
+        </a>
+
+        <a
+          id="call-btn"
+          href="#"
+          class="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-sm shadow transition"
+        >
+          <span id="phone-display-text">+1 (555) 234-5678</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       FOOTER
+       ===================================================================== -->
+  <footer class="py-8 bg-slate-900 text-slate-400 text-xs text-center border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-4">
+      <p id="footer-title">Modern & Private Basement Suite — Available for Rent</p>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       JAVASCRIPT HYDRATION SCRIPT
+       ===================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Title & Meta
+      document.title = `${PROPERTY_CONFIG.title} | Rental Showcase`;
+      document.getElementById('hero-title').textContent = PROPERTY_CONFIG.title;
+      document.getElementById('hero-tagline').textContent = PROPERTY_CONFIG.tagline;
+      document.getElementById('hero-availability').textContent = PROPERTY_CONFIG.availableDate;
+      document.getElementById('hero-rent').textContent = PROPERTY_CONFIG.monthlyRent;
+      document.getElementById('hero-deposit').textContent = PROPERTY_CONFIG.securityDeposit;
+      document.getElementById('property-description-heading').textContent = PROPERTY_CONFIG.descriptionHeading;
+      document.getElementById('property-description').innerHTML = PROPERTY_CONFIG.descriptionParagraphs.map(paragraph => `
+        <p class="text-slate-600 leading-relaxed">${paragraph}</p>
+      `).join('');
+      document.getElementById('location-text').textContent = `${PROPERTY_CONFIG.locationName}. Conveniently located close to public transit stops, local supermarkets, and parks.`;
+      document.getElementById('footer-title').textContent = `${PROPERTY_CONFIG.title} — Available for Rent`;
+
+      // 2. Map
+      document.getElementById('map-iframe').src = PROPERTY_CONFIG.googleMapsEmbedUrl;
+      document.getElementById('google-maps-external').href = PROPERTY_CONFIG.googleMapsUrl;
+      document.getElementById('map-click-link').href = PROPERTY_CONFIG.googleMapsUrl;
+
+      // 3. Contact Links
+      document.getElementById('phone-display-text').textContent = PROPERTY_CONFIG.phoneDisplay;
+      document.getElementById('call-btn').href = `tel:${PROPERTY_CONFIG.phoneRaw}`;
+      
+      const waMsg = encodeURIComponent(`Hello, I am interested in renting your basement property ("${PROPERTY_CONFIG.title}"). Is it still available for viewing?`);
+      document.getElementById('whatsapp-btn').href = `https://wa.me/${PROPERTY_CONFIG.whatsappNumber}?text=${waMsg}`;
+
+      // 4. Hero Main Image
+      const firstImg = PROPERTY_CONFIG.mediaGallery.find(m => m.type === 'image');
+      if (firstImg) {
+        document.getElementById('hero-main-img').src = firstImg.url;
+      }
+
+      // 5. Amenities Checklist
+      const amenitiesEl = document.getElementById('amenities-list');
+      amenitiesEl.innerHTML = PROPERTY_CONFIG.amenities.map(amenity => `
+        <li class="flex items-center gap-2.5">
+          <svg class="w-4 h-4 text-indigo-600 shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+          <span>${amenity}</span>
+        </li>
+      `).join('');
+
+      // 6. Media Gallery
+      const galleryEl = document.getElementById('gallery-grid');
+      galleryEl.innerHTML = PROPERTY_CONFIG.mediaGallery.map(item => {
+        if (item.type === 'video') {
+          return `
+            <button
+              type="button"
+              data-media-index="${PROPERTY_CONFIG.mediaGallery.indexOf(item)}"
+              aria-label="Open ${item.title} in full screen"
+              class="w-full rounded-2xl overflow-hidden bg-slate-900 border border-slate-200 shadow-sm relative group aspect-[4/3] cursor-pointer"
+            >
+              <img
+                src="${item.poster || item.url}"
+                alt="${item.title}"
+                loading="lazy"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+              />
+              <span class="absolute inset-0 flex items-center justify-center">
+                <span class="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 text-slate-900 text-2xl shadow-lg">▶</span>
+              </span>
+              <span class="absolute bottom-3 left-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-lg text-white text-xs pointer-events-none">
+                🎬 ${item.title}
+              </span>
+            </button>
+          `;
+        }
+
+        return `
+          <button
+            type="button"
+            data-media-index="${PROPERTY_CONFIG.mediaGallery.indexOf(item)}"
+            aria-label="Open ${item.title} in full screen"
+            class="w-full rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 shadow-sm relative group aspect-[4/3] cursor-pointer"
+          >
+            <img
+              src="${item.url}"
+              alt="${item.title}"
+              loading="lazy"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            />
+            <span class="absolute bottom-3 left-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-lg text-white text-xs pointer-events-none">
+              📷 ${item.title}
+            </span>
+          </button>
+        `;
+      }).join('');
+
+      const mediaModal = document.getElementById('media-modal');
+      const mediaModalImage = document.getElementById('media-modal-image');
+      const mediaModalVideo = document.getElementById('media-modal-video');
+      const mediaModalClose = document.getElementById('media-modal-close');
+      const mediaModalPrev = document.getElementById('media-modal-prev');
+      const mediaModalNext = document.getElementById('media-modal-next');
+      let currentMediaIndex = 0;
+
+      const openMediaModal = index => {
+        currentMediaIndex = (index + PROPERTY_CONFIG.mediaGallery.length) % PROPERTY_CONFIG.mediaGallery.length;
+        const item = PROPERTY_CONFIG.mediaGallery[currentMediaIndex];
+        mediaModal.classList.remove('hidden');
+        mediaModal.classList.add('flex');
+        document.body.classList.add('overflow-hidden');
+
+        if (item.type === 'video') {
+          mediaModalImage.classList.add('hidden');
+          mediaModalVideo.classList.remove('hidden');
+          mediaModalVideo.pause();
+          mediaModalVideo.currentTime = 0;
+          mediaModalVideo.poster = item.poster || '';
+          mediaModalVideo.src = item.url;
+        } else {
+          mediaModalVideo.pause();
+          mediaModalVideo.removeAttribute('src');
+          mediaModalVideo.load();
+          mediaModalVideo.classList.add('hidden');
+          mediaModalImage.src = item.url;
+          mediaModalImage.alt = item.title;
+          mediaModalImage.classList.remove('hidden');
+        }
+      };
+
+      const closeMediaModal = () => {
+        mediaModalVideo.pause();
+        mediaModalVideo.currentTime = 0;
+        mediaModalVideo.removeAttribute('src');
+        mediaModalVideo.load();
+        mediaModal.classList.add('hidden');
+        mediaModal.classList.remove('flex');
+        document.body.classList.remove('overflow-hidden');
+        mediaModalImage.classList.add('hidden');
+        mediaModalVideo.classList.add('hidden');
+      };
+
+      galleryEl.querySelectorAll('[data-media-index]').forEach(button => {
+        button.addEventListener('click', () => {
+          openMediaModal(Number(button.dataset.mediaIndex));
+        });
+      });
+
+      document.getElementById('hero-media-button').addEventListener('click', () => {
+        if (firstImg) {
+          openMediaModal(PROPERTY_CONFIG.mediaGallery.indexOf(firstImg));
+        }
+      });
+
+      mediaModalPrev.addEventListener('click', () => openMediaModal(currentMediaIndex - 1));
+      mediaModalNext.addEventListener('click', () => openMediaModal(currentMediaIndex + 1));
+      mediaModalClose.addEventListener('click', closeMediaModal);
+      mediaModal.addEventListener('click', event => {
+        if (event.target === mediaModal) {
+          closeMediaModal();
+        }
+      });
+      document.addEventListener('keydown', event => {
+        if (mediaModal.classList.contains('hidden')) return;
+        if (event.key === 'Escape') closeMediaModal();
+        if (event.key === 'ArrowLeft') openMediaModal(currentMediaIndex - 1);
+        if (event.key === 'ArrowRight') openMediaModal(currentMediaIndex + 1);
+      });
+    });
+  </script>
+</body>
+</html>
